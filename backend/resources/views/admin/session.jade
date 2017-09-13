@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+    .page-header
+        h3 Sessions
+
+        if !sessions
+            p No sessions are found
+        else
+            table.table.table-striped.table-bordered.table-hover
+                thead
+                    tr
+                        th ID
+                        th User
+                        th Meta
+                        th Logs
+                        th(style="min-width: 220px") Actions
+                tbody
+                    each session in sessions
+                        tr
+                            td= session.get("id")
+                            td= session.related("user").get("email")
+                            td= JSON.stringify(session.related("meta").attributes)
+                            td= session.related("logs").length
+                            td
+                                .btn-group
+                                    a(href='/admin/sessions/' + session.get("id") + '/view')
+                                        button.btn.btn-sm.btn-default
+                                            i.fa.fa-eye
+                                            span View
+
+                                    a(href='/admin/sessions/' + session.get("id") + '/update')
+                                        button.btn.btn-sm.btn-primary
+                                            i.fa.fa-pencil
+                                            span Update Meta
+
+                                    a(href='/admin/sessions/' + session.get("id") + '/delete')
+                                        button.btn.btn-sm.btn-danger
+                                            i.fa.fa-trash
+                                            span Delete

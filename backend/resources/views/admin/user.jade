@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+    .page-header
+        h3 Users
+
+        if !users
+            p No users are found
+        else
+            table.table.table-striped.table-bordered.table-hover
+                thead
+                    tr
+                        th ID
+                        th Email
+                        th Name
+                        th Admin?
+                        th Blocked?
+                        th Actions
+                tbody
+                    each user in users
+                        tr
+                            td= user.get("id")
+                            td= user.get("email")
+                            td= user.get("name")
+                            td= user.isAdmin()
+                            td= user.isBlocked()
+                            td
+                                .btn-group
+                                    a(href='/admin/users/' + user.get("id") + '/update')
+                                        button.btn.btn-primary Update
+                                    if user.isBlocked()
+                                        a(href='/admin/users/' + user.get("id") + '/unblock')
+                                            button.btn.btn-success Unblock
+                                    else
+                                        a(href='/admin/users/' + user.get("id") + '/block')
+                                            button.btn.btn-danger Block

@@ -1,0 +1,59 @@
+extends ../layout
+
+block content
+    .page-header
+        h3 Meta Update
+
+        if !meta
+            p Invalid meta
+        else
+          form.form-horizontal(action="/admin/sessions/" + meta.get("id") + "/update", method='POST')
+            input(type='hidden', name='_csrf', value=_csrf)
+
+            .form-group
+              label.col-sm-3.control-label(for='name') Name
+              .col-sm-7
+                input.form-control(type='text', name='name', id='name', value='#{meta.get("name") || ""}')
+
+            .form-group
+              label.col-sm-3.control-label(for='sex') Gender
+              .col-sm-7
+                select.form-control(name='sex')
+                  if (meta.get("sex") === "Male")
+                    option(value="Male", selected)= "Male"
+                    option(value="Female")= "Female"
+                  else
+                    option(value="Male")= "Male"
+                    option(value="Female", selected)= "Female"
+
+            .form-group
+              label.col-sm-3.control-label(for='age') Birthday
+              .col-sm-7
+                select.form-control(name='age', value='#{meta.get("age")}')
+                  - for (var i = 1930; i <= 2030; i++)
+                    if (i === meta.get("age"))
+                      option(value=i, selected)= i
+                    else
+                      option(value=i)= i
+
+            .form-group
+              label.col-sm-3.control-label(for='address') Address
+              .col-sm-7
+                input.form-control(type='text', name='address', id='address', value='#{meta.get("address") || ""}')
+
+            .form-group
+              label.col-sm-3.control-label(for='location') Location
+              .col-sm-7
+                select.form-control(name='location')
+                  if (meta.get("location") == 1)
+                    option(value=1, selected)= "In Hospital"
+                    option(value=0)= "Out of Hospital"
+                  else
+                    option(value=1)= "In Hospital"
+                    option(value=0, selected)= "Out of Hospital"
+
+            .form-group
+              .col-sm-offset-3.col-sm-4
+                button.btn.btn.btn-primary(type='submit')
+                  i.fa.fa-pencil
+                  | Update Meta

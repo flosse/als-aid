@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+    .page-header
+        h3 Log Update
+
+        if !log
+            p Invalid log
+        else
+          form.form-horizontal(action="/admin/logs/" + log.get("id") + "/update", method='POST')
+            input(type='hidden', name='_csrf', value=_csrf)
+            .form-group
+              label.col-sm-3.control-label(for='message') Message
+              .col-sm-7
+                input.form-control(type='text', name='message', id='message', value='#{log.get("message")}')
+            .form-group
+              .col-sm-offset-3.col-sm-4
+                button.btn.btn.btn-primary(type='submit')
+                  i.fa.fa-pencil
+                  | Update Log

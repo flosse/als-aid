@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+    .page-header
+        h3 User Update
+
+        if !user
+            p Invalid user
+        else
+          form.form-horizontal(action="/admin/users/" + user.get("id") + "/update", method='POST')
+            input(type='hidden', name='_csrf', value=_csrf)
+            .form-group
+              label.col-sm-3.control-label(for='name') Name
+              .col-sm-7
+                input.form-control(type='text', name='name', id='name', value='#{user.get("name")}')
+            .form-group
+              label.col-sm-3.control-label(for='gravatar') Gravatar
+              .col-sm-4
+                img(src="#{user.getAvatar()}", class='profile', width='100', height='100')
+            .form-group
+              .col-sm-offset-3.col-sm-4
+                button.btn.btn.btn-primary(type='submit')
+                  i.fa.fa-pencil
+                  | Update Profile

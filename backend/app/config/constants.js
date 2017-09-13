@@ -1,0 +1,1 @@
+exports.SOME_CONSTANT = "SOME_CONSTANT";

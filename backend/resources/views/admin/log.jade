@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+    .page-header
+        h3 Logs
+
+        if !logs
+            p No logs are found
+        else
+            table.table.table-striped.table-bordered.table-hover
+                thead
+                    tr
+                        th ID
+                        th Message
+                        th Date
+                        th User
+                        th Actions
+                tbody
+                    each log in logs
+                        tr
+                            td= log.get("id")
+                            td= log.get("message")
+                            td= log.getDate()
+                            td= log.related("session").related("user").get("email")
+                            td
+                                .btn-group
+                                    a(href='/admin/logs/' + log.get("id") + '/update')
+                                        button.btn.btn-sm.btn-primary
+                                            i.fa.fa-pencil
+                                            span Edit
+
+
+                                    a(href='/admin/logs/' + log.get("id") + '/delete')
+                                        button.btn.btn-sm.btn-danger
+                                            i.fa.fa-trash
+                                            span Delete

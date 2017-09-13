@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+    .page-header
+        a(href="/admin/sessions")
+            button.btn.btn-primary &laquo; Back
+
+        if !session
+            p Invalid session
+        else
+
+            .row(style="text-align: center;")
+              .col-xs-12.col-sm-6
+                h3 User Information
+                h5= session.related("user").get("email")
+
+              .col-xs-12.col-sm-6
+                h3 Meta Information
+                h5= "Name: " + (session.related("meta").get("name") || "N/A")
+                h5= "Sex: " + (session.related("meta").get("sex") || "N/A")
+                h5= "Birthday: " + (session.related("meta").get("age") || "N/A")
+                h5= "Location: " + (session.related("meta").get("location") == 1 ? "Yes" : "No")
+                h5= "Address: " + (session.related("meta").get("address") || "N/A")
+
+            table.table.table-striped.table-bordered.table-hover
+                thead
+                    tr
+                        th Message
+                        th Date
+                        th Actions
+                tbody
+                    each log in session.related("logs").models
+                        tr
+                            td= log.get("message")
+                            td= log.getDate()
+                            td
+                                .btn-group
+                                    a(href='/admin/logs/' + log.get("id") + '/update')
+                                        button.btn.btn-sm.btn-primary
+                                            i.fa.fa-pencil
+                                            span Edit
+
+                                    a(href='/admin/logs/' + log.get("id") + '/delete')
+                                        button.btn.btn-sm.btn-danger
+                                            i.fa.fa-trash
+                                            span Delete
