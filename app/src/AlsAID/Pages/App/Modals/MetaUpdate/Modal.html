@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ "page.modals.update-meta-title" | translate }}
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="md-checkmark" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>{{ "global.name" | translate }}</ion-label>
+      <ion-input (change)="enable()" [(ngModel)]="meta.name" name="name" type="text" #name="ngModel" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ "global.address" | translate }}</ion-label>
+      <ion-input (change)="enable()" [(ngModel)]="meta.address" name="address" type="text" #address="ngModel" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ "global.birthday" | translate }}</ion-label>
+      <ion-datetime name="age" (ionChange)="enable()" displayFormat="YYYY" pickerFormat="YYYY" min="1920" max="2030" [(ngModel)]="meta.age" #age="ngModel" required></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ "global.location" | translate }}</ion-label>
+      <ion-select placeholder="Not specified" (ionChange)="enable()" [(ngModel)]="meta.location" name="location" type="text" #location="ngModel" required>
+        <ion-option value="0">Out of Hospital</ion-option>
+        <ion-option value="1">In Hospital</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ "global.gender" | translate }}</ion-label>
+      <ion-select placeholder="Not specified" (ionChange)="enable()" [(ngModel)]="meta.sex" name="sex" type="text" #sex="ngModel" required>
+        <ion-option value="Male">Male</ion-option>
+        <ion-option value="Female">Female</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

@@ -1,0 +1,42 @@
+page-rosc {
+
+    ion-content {
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-left: 20px !important;
+            margin-right: 20px !important;
+        }
+
+        p {
+            font-size: 1.4rem;
+            margin-left: 20px !important;
+            margin-right: 20px !important;
+            color: #898989;
+        }
+
+        ion-list {
+
+            border: 1px solid rgba(0, 0, 0, .1) !important;
+            margin: 10px !important;
+
+            ion-item {
+                p {
+                    font-size: 1.6rem !important;
+                    line-height: 5rem !important;
+                }
+
+                button {
+                    height: 4rem !important;
+                    font-size: 2rem !important;
+                    padding: 0 10px !important;
+                }
+
+                ion-label {
+                    white-space: normal;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ "page.status.title" | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <h2>{{ "page.status.header" | translate }}</h2>
+
+  <p>{{ "page.status.title" | translate }}</p>
+
+  <ion-list>
+    <ion-item *ngFor="let checkbox of checkboxes">
+      <ion-label>{{ checkbox.name }}</ion-label>
+      <ion-checkbox (click)="onClick(checkbox)" [(ngModel)]="checkbox.checked"></ion-checkbox>
+      <p>{{ checkbox.name }}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid class="sticks-to-footer">
+    <ion-row>
+      <ion-col width-50>
+        <button class="button-shiny" ion-button full (click)="openOutcome()" [attr.disabled]="isAllChecked() ? null : true">
+          {{ "page.status.outcome" | translate }}
+        </button>
+      </ion-col>
+      <ion-col width-50>
+        <button class="button-inverse" ion-button full (click)="openLog()">
+          {{ "page.status.open-log" | translate }}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>{{ "page.home.title" | translate }}</ion-title>
+
+    <ion-buttons end>
+        <button style="padding: 0 6px;" ion-button icon-only (click)="openCommentModal()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid class="header-grid">
+    <ion-row>
+      <ion-col>
+          <h1>{{ duration }}</h1>
+          <p>{{ "global.duration" | translate }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-50>
+          <h4>{{ "global.begin" | translate }}</h4>
+          <span>{{ begin }}</span>
+      </ion-col>
+      <ion-col width-50>
+          <h4>{{ "global.finish" | translate }}</h4>
+          <span>{{ finish }}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="main-grid">
+    <ion-row>
+      <ion-col width-50>
+        <button class="button-color-1" ion-button block (click)="openCpr()">
+          {{ "page.home.button-fibrillation" | translate }}
+        </button>
+      </ion-col>
+      <ion-col width-50>
+        <button class="button-color-2" ion-button block (click)="openCpr()">
+          {{ "page.home.button-pea" | translate }}
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-50>
+        <button class="button-color-3" ion-button block (click)="openCpr()">
+          {{ "page.home.button-pulse" | translate }}
+        </button>
+      </ion-col>
+      <ion-col width-50>
+        <button class="button-color-4" ion-button block (click)="openCpr()">
+          {{ "page.home.button-asystole" | translate }}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="sticks-to-footer">
+    <ion-row>
+      <ion-col width-50>
+        <button class="button-inverse" ion-button block (click)="openStatus()">
+          {{ "page.home.button-abbruch" | translate }}
+        </button>
+      </ion-col>
+      <ion-col width-50>
+        <button class="button-shiny" ion-button block (click)="openRosc()">
+          {{ "page.home.button-rosc" | translate }}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,67 @@
+<ion-content class="auth-container signup-page">
+
+  <ion-list>
+    <div class="logo">
+      <img src="assets/img/logo.png">
+    </div>
+
+    <form #signupForm="ngForm" novalidate>
+      <ion-item>
+        <ion-label floating color="primary">Email</ion-label>
+        <ion-input [(ngModel)]="data.email" name="email" type="email" #email="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="email.valid || submitted == false" color="danger" padding-left>
+        Email is required
+      </p>
+
+      <ion-item>
+        <ion-label floating color="primary">{{ "global.password" | translate }}</ion-label>
+        <ion-input [(ngModel)]="data.password" name="password" type="password" #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="password.valid || submitted == false" color="danger" padding-left>
+        Password is required
+      </p>
+
+      <ion-item>
+        <ion-label floating color="primary">{{ "global.password-confirm" | translate }}</ion-label>
+        <ion-input [(ngModel)]="data.confirmPassword" name="confirmPassword" type="password" #confirmPassword="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="confirmPassword.valid || submitted == false" color="danger" padding-left>
+        Confirm password is required
+      </p>
+
+      <h3 [hidden]="err === false" color="danger" padding-left>
+        {{ msg }}
+      </h3>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button class="button-shiny" ion-button full (click)="signup(signupForm)" type="submit">
+              {{ "global.create-account" | translate }}
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button class="button-inverse" ion-button full (click)="signin()">
+              {{ "global.signin" | translate }}
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button class="button-basic" ion-button full outline (click)="forgotPassword()">
+              {{ "global.forgot-password" | translate }}?
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </form>
+  </ion-list>
+
+</ion-content>

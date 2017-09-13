@@ -1,0 +1,139 @@
+<ion-header>
+  <ion-navbar>
+
+    <button ion-button menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>{{ "page.log-list.title" | translate }}</ion-title>
+
+    <ion-buttons end>
+        <button style="padding: 0 6px;" ion-button icon-only (click)="openCommentModal()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-segment [(ngModel)]="segment" (ionChange)="changeSegment($event)">
+      <ion-segment-button value="today">
+        {{ "global.today" | translate }}
+      </ion-segment-button>
+      <ion-segment-button value="week">
+        {{ "global.week" | translate }}
+      </ion-segment-button>
+      <ion-segment-button value="month">
+        {{ "global.month" | translate }}
+      </ion-segment-button>
+      <ion-segment-button value="all">
+        {{ "global.all" | translate }}
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-grid *ngIf="segment === 'today'">
+      <ion-row>
+        <ion-col width-100>
+          <h2>{{ getMoment().format("MMMM, DD") }}</h2>
+          <span class="month">{{ getMoment().format("dddd") }}</span>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col width-100>
+          <ion-list>
+            <ion-item *ngFor="let session of todaysSessions()">
+                <h3>{{ "page.log.title" | translate }} {{ session.id }}</h3>
+                <p>
+                  {{ session.created_at.format("YYYY-MM-DD HH:mm:ss") }}
+                  <i>({{ session.logs.length }} {{ "page.log.logs" | translate }})</i>
+                </p>
+                <button ion-button icon-only item-right (click)="presentPopover($event, session)">
+                    <ion-icon name="md-more"></ion-icon>
+                </button>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="segment === 'week'">
+      <ion-row>
+        <ion-col width-100>
+          <h2>{{ getMoment().startOf("week").format("MMMM, DD") }}</h2>
+          <span class="month">---</span>
+          <h2 class="no-margin">{{ getMoment().endOf("week").format("MMMM, DD") }}</h2>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col width-100>
+          <ion-list>
+            <ion-item *ngFor="let session of weeksSessions()">
+                <h3>{{ "page.log.title" | translate }} {{ session.id }}</h3>
+                <p>
+                  {{ session.created_at.format("YYYY-MM-DD HH:mm:ss") }}
+                  <i>({{ session.logs.length }} {{ "page.log.logs" | translate }})</i>
+                </p>
+                <button ion-button icon-only item-right (click)="presentPopover($event, session)">
+                    <ion-icon name="md-more"></ion-icon>
+                </button>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="segment === 'month'">
+      <ion-row>
+        <ion-col width-100>
+          <h2>{{ getMoment().startOf("month").format("MMMM") }}</h2>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col width-100>
+          <ion-list>
+            <ion-item *ngFor="let session of monthsSessions()">
+                <h3>{{ "page.log.title" | translate }} {{ session.id }}</h3>
+                <p>
+                  {{ session.created_at.format("YYYY-MM-DD HH:mm:ss") }}
+                  <i>({{ session.logs.length }} {{ "page.log.logs" | translate }})</i>
+                </p>
+                <button ion-button icon-only item-right (click)="presentPopover($event, session)">
+                    <ion-icon name="md-more"></ion-icon>
+                </button>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="segment === 'all'">
+      <ion-row>
+        <ion-col width-100>
+          <h2>{{ "global.all" | translate }}</h2>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col width-100>
+          <ion-list>
+            <ion-item *ngFor="let session of allSessions()">
+                <h3>{{ "page.log.title" | translate }} {{ session.id }}</h3>
+                <p>
+                  {{ session.created_at.format("YYYY-MM-DD HH:mm:ss") }}
+                  <i>({{ session.logs.length }} {{ "page.log.logs" | translate }})</i>
+                </p>
+                <button ion-button icon-only item-right (click)="presentPopover($event, session)">
+                    <ion-icon name="md-more"></ion-icon>
+                </button>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+</ion-content>

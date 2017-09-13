@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button *ngIf="generated === true" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>{{ "page.start.title" | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item>
+            <h2>{{ "page.start.image-1" | translate }}</h2>
+            <img src="assets/img/pages/start/1_3x.png">
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-item>
+            <h2>{{ "page.start.image-2" | translate }}</h2>
+            <img src="assets/img/pages/start/2_3x.png">
+        </ion-item>
+    </ion-list>
+
+    <button *ngIf="generated === false" class="button-shiny" ion-button full (click)="start()">
+        {{ "page.start.start" | translate }}
+    </button>
+
+    <button *ngIf="generated === true" class="button-shiny" ion-button full (click)="restart()">
+        {{ "page.start.restart" | translate }}
+    </button>
+
+</ion-content>

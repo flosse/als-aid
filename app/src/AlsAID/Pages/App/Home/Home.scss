@@ -1,0 +1,112 @@
+page-home {
+    ion-header::after {
+        height: 0 !important;
+    }
+
+    ion-content {
+
+        ion-grid.header-grid {
+            background-color: color($colors, primary) !important;
+            padding: 0;
+
+            ion-row {
+                text-align: center;
+
+                &:nth-child(2) {
+                    margin-top: 10px;
+                    border-top: 1px solid rgba(255, 255, 255, .2) !important;
+
+                    ion-col {
+                        padding: 15px 0;
+
+                        &:nth-child(1) {
+                            border-right: 1px solid rgba(255, 255, 255, .2) !important;
+                        }
+                    }
+                }
+            }
+
+            h1 {
+                color: color($colors, _gray) !important;
+                font-size: 34px;
+                font-weight: 400;
+                margin: 0 !important;
+            }
+
+            p {
+                color: darken(color($colors, _gray), 10%) !important;
+                font-size: 11px;
+                font-weight: 100;
+                margin: 3px 0 0 0;
+                text-transform: uppercase;
+            }
+
+            h4 {
+                display: inline !important;
+                color: color($colors, _gray) !important;
+                font-size: 14px;
+                font-weight: 400;
+                margin: 0 5px 0 0;
+            }
+
+            span {
+                color: darken(color($colors, _gray), 10%) !important;
+                font-size: 14px;
+                font-weight: 100;
+            }
+        }
+
+        ion-grid.main-grid {
+            button {
+                height: calc(40vh - 80px) !important;
+                color: #000;
+                text-transform: none;
+
+                span {
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                }
+
+                &.button-color-1 {
+                    background-color: #fcf674;
+
+                    /*&:after {
+                        content: "4 CPR";
+                    }*/
+                }
+
+                &.button-color-2 {
+                    background-color: #fcdea4;
+
+                    /*&:after {
+                        content: "6 CPR";
+                    }*/
+                }
+
+                &.button-color-3 {
+                    background-color: #fcf674;
+
+                    /*&:after {
+                        content: "5 CPR";
+                    }*/
+                }
+
+                &.button-color-4 {
+                    background-color: #fcdea4;
+
+                    /*&:after {
+                        content: "5 CPR";
+                    }*/
+                }
+
+                &:after {
+                    position: absolute;
+                    bottom: 25px;
+                    right: 15px;
+                    font-size: 12px;
+                    color: #999 !important;
+                }
+            }
+        }
+    }
+}

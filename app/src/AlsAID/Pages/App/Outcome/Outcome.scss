@@ -1,0 +1,17 @@
+page-outcome {
+    ion-item {
+        margin-top: calc(50%) !important;
+        text-align: center !important;
+        border: 1px solid rgba(0, 0, 0, .1) !important;
+
+        h2 {
+            font-size: 3.5rem !important;
+            margin: 20px 0 40px 0 !important;
+        }
+
+        h4 {
+            font-size: 2rem !important;
+            margin: 20px 0 !important;
+        }
+    }
+}

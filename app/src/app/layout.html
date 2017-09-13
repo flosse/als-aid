@@ -1,0 +1,44 @@
+<!-- logged in menu -->
+<ion-menu id="loggedInMenu" [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="outer-content">
+
+    <ion-list>
+      <ion-list-header>
+        <ion-item no-padding no-lines>
+          <ion-avatar item-left>
+            <img [src]="getSession().get('avatar')">
+          </ion-avatar>
+          <h2>{{ getSession().get("email") }}</h2>
+          <h4>DOCTOR</h4>
+        </ion-item>
+      </ion-list-header>
+      <ion-list>
+        <div *ngFor="let page of appPages; let i = index;">
+          <button ion-item menuClose no-lines (click)="openPage(page)">
+            <ion-icon item-left [name]="page.icon" [color]="isActive(page)"></ion-icon>
+            {{ page.title }}
+          </button>
+          <ion-item-divider *ngIf="i === 2" no-lines color="light"></ion-item-divider>
+        </div>
+
+        <button ion-item menuClose (click)="signout()">
+          <ion-icon color="primary" item-left name="md-log-out"></ion-icon>
+          {{ "global.signout" | translate }}
+        </button>
+      </ion-list>
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+
+<!-- main navigation -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

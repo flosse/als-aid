@@ -1,0 +1,223 @@
+{
+
+    "global": {
+
+        "signout": "Sign Out",
+        "signin": "Sign In",
+        "signup": "Sign Up",
+        "create-account": "Create Account",
+        "password": "Password",
+        "password-confirm": "Confirm Password",
+        "forgot-password": "Forgot Password",
+        "duration": "Duration",
+        "begin": "Begin",
+        "finish": "Finish",
+        "saved": "Saved",
+        "today": "Today",
+        "week": "Week",
+        "month": "Month",
+        "message": "Message",
+        "name": "Name",
+        "address": "Address",
+        "birthday": "Date of Birth",
+        "location": "Location",
+        "gender": "Gender",
+        "male": "Male",
+        "female": "Female",
+        "comment": "Comment",
+        "comment-added": "Comment added successfully.",
+        "all": "All",
+        "yes": "Yes",
+        "no": "No",
+        "are-you-sure-question": "Are you sure?"
+    },
+
+    "page": {
+
+        "forgot-password": {
+            "notice": "Please enter your email address below and we will send you instructions on how to recover your password.",
+            "reset-instructions": "Get Reset Instructions",
+            "back": "Back to Sign In"
+        },
+
+        "signin": {
+            "title": "Account",
+            "welcome": "Welcome {{ email }}",
+            "info": "Signing in..."
+        },
+
+        "signup": {
+            "title": "Account",
+            "welcome": "Welcome {{ email }}",
+            "info": "Signing up..."
+        },
+
+        "about": {
+            "title": "About ALS Aid",
+            "header": "App Description and Disclaimer",
+            "content": "ALS Aid is a mobile application designed to assist medical personnel document their resuscitation effort during cardiac arrest in adults.  ALS Aid can record all 2015 ERC ALS guideline recommended procedures.  Currently, language support for english and german is offered. Neither ALS Aid nor any individual contributors accept responsibility, legal or otherwise, resulting from the use or misuse of this product. By downloading and using this app the user agrees to these terms."
+        },
+
+        "account": {
+            "title": "Settings",
+            "welcome": "Welcome {{ email }}",
+            "change-language": "Change Language"
+        },
+
+        "cpr": {
+            "title": "CPR",
+            "prefix": "CPR Clicked",
+            "button-1": "Thoracic Compression",
+            "button-2": "Defibrillation >150J",
+            "button-3": "Adrenaline 1mg",
+            "button-4": "Amiodarone 150mg"
+        },
+
+        "home": {
+            "title": "Rhythm Analysis",
+            "button-fibrillation": "VFib",
+            "button-pea": "PEA",
+            "button-pulse": "Pulseless VT",
+            "button-asystole": "Asystole",
+            "button-abbruch": "Abort ALS",
+            "button-rosc": "ROSC"
+        },
+
+        "log": {
+            "title": "CPR Log Number",
+            "patient-meta-data": "Patient Supplementary Data",
+            "logs": "CPR Logs",
+            "no-meta": "No supplementary data yet. Click to add."
+        },
+
+        "log-list": {
+            "title": "CPR logs",
+            "retrieving": "Retrieving your history...",
+            "sending": "Sending...",
+            "sent": "Email has been sent.",
+            "failed": "Could not send email.",
+            "open": "Open",
+            "send-as-email": "Send as Email",
+            "close": "Close"
+        },
+
+        "modals": {
+            "update-log-title": "Update CPR Log",
+            "update-meta-title": "Update Supplementary Data",
+            "comment-title": "Add a Comment",
+            "comment-placeholder": "Please write your comment.",
+            "comment-prefix": "Comment by {{ email }}"
+        },
+
+        "outcome": {
+            "title": "Outcome",
+            "message-when-alive": "Patient has been resuscitated at {{ date }}",
+            "message-when-dead": "Patient is dead at {{ date }}",
+            "button-1": "Back to Start",
+            "button-2": "Review Logs",
+            "alive-message": "Patient has been resuscitated",
+            "not-alive-message": "Time of death"
+        },
+
+        "rosc": {
+            "title": "Return of Spontaneous Circulation",
+            "notice": "Immediate treatment:",
+            "prefix": "ROSC Checked",
+            "checkbox-1": "Assess ABCDE",
+            "checkbox-2": "Maintain SpO2 94-98%",
+            "checkbox-3": "Ventilate to normocapnia",
+            "checkbox-4": "12-lead ECG: consider PCI",
+            "checkbox-5": "Keep SBP >100mmHg",
+            "checkbox-6": "Temperature control",
+            "button-1": "Stable ROSC",
+            "button-2": "Continue ALS"
+        },
+
+        "start": {
+            "title": "Start",
+            "image-1": "1. BLS 30:2",
+            "image-2": "2. Attach Defibrillator Pads",
+            "start": "Start ALS",
+            "restart": "Restart ALS",
+            "warning": "An ALS session is currently in progress. Are you sure you want to restart it?"
+        },
+
+        "status": {
+            "title": "Abort CPR",
+            "prefix": "Status Checked",
+            "header": "Abort CPR",
+            "notice": "Observe the patient for at least 5 minutes before confirming the patient has expired. Time of death may be established when all of the following criteria are met:",
+            "outcome": "Confirm Death",
+            "open-log": "Open Log",
+            "checkbox-1": ">5 minutes cardio-respiratory arrest",
+            "checkbox-2": "No corneal reflex",
+            "checkbox-3": "No pupil reaction to light",
+            "checkbox-4": "No reaction to supraorbital pressure"
+        },
+
+        "tabs": {
+            "title": "Tabs"
+        },
+
+        "tutorial": {
+            "title": "4H4T",
+            "skip": "Return",
+            "during-cpr": "DURING CPR",
+            "during-cpr-line-1": "Ensure high-quality CPR: rate, depth, recoil",
+            "during-cpr-line-2": "Plan actions before interrupting CPR",
+            "during-cpr-line-3": "Give oxygen",
+            "during-cpr-line-4": "Consider advanced airway and capnography",
+            "during-cpr-line-5": "Continuous chest compressions when advanced airway in place",
+            "during-cpr-line-6": "Vascular access (intravenous, intraosseous)",
+            "during-cpr-line-7": "Give adrenaline every 3-5 min",
+            "during-cpr-line-8": "Correct reversible causes",
+            "reversible-causes": "REVERSIBLE CAUSES",
+            "reversible-causes-line-1": "Hypoxia",
+            "reversible-causes-line-2": "Hypovolaemia",
+            "reversible-causes-line-3": "Hypo-/hyperkalaemia/metabolic",
+            "reversible-causes-line-4": "Hypothermia",
+            "reversible-causes-line-5": "Thrombosis - coronary or pulmonary",
+            "reversible-causes-line-6": "Tamponade - cardiac",
+            "reversible-causes-line-7": "Toxins",
+            "reversible-causes-line-8": "Tension pneumothorax"
+        },
+
+        "duringcpr": {
+            "title": "During CPR",
+            "skip": "Return",
+            "during-cpr": "DURING CPR",
+            "during-cpr-line-1": "Ensure high-quality CPR: rate, depth, recoil",
+            "during-cpr-line-2": "Plan actions before interrupting CPR",
+            "during-cpr-line-3": "Give oxygen",
+            "during-cpr-line-4": "Consider advanced airway and capnography",
+            "during-cpr-line-5": "Continuous chest compressions when advanced airway in place",
+            "during-cpr-line-6": "Vascular access (intravenous, intraosseous)",
+            "during-cpr-line-7": "Give adrenaline every 3-5 min",
+            "during-cpr-line-8": "Correct reversible causes",
+            "reversible-causes": "REVERSIBLE CAUSES",
+            "reversible-causes-line-1": "Hypoxia",
+            "reversible-causes-line-2": "Hypovolaemia",
+            "reversible-causes-line-3": "Hypo-/hyperkalaemia/metabolic",
+            "reversible-causes-line-4": "Hypothermia",
+            "reversible-causes-line-5": "Thrombosis - coronary or pulmonary",
+            "reversible-causes-line-6": "Tamponade - cardiac",
+            "reversible-causes-line-7": "Toxins",
+            "reversible-causes-line-8": "Tension pneumothorax"
+        }
+
+    },
+
+    "error": {
+
+        "unknown": "An unknown error has occurred.",
+        "fill-the-form": "Please fill in the form.",
+        "retrieve-failed": "Could not retrieve history.",
+
+        "http": {
+            "0": "Could not connect to server. Check your connection and make sure you are not behind a firewall.",
+            "401": "Invalid email and password combination.",
+            "500": "Server is currently down. Please try again later."
+        }
+
+    }
+}

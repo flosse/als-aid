@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ "page.account.title" | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content">
+  <div padding-top text-center>
+    <img [src]="user.avatar">
+    <h2 translate [translateParams]="{email: user.email}">page.account.welcome</h2>
+
+    <ion-list inset>
+
+      <button ion-item (click)="prompt()">
+        <ion-icon item-left name="md-flag"></ion-icon>
+        {{ "page.account.change-language" | translate }}
+      </button>
+
+      <button ion-item (click)="signout()">
+        <ion-icon item-left name="md-log-out"></ion-icon>
+        {{ "global.signout" | translate }}
+      </button>
+    </ion-list>
+
+  </div>
+</ion-content>

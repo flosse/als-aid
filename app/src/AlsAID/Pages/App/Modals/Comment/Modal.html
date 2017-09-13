@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ "page.modals.comment-title" | translate }}
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="md-checkmark" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>{{ "page.modals.comment-placeholder" | translate }}</ion-label>
+      <ion-input [(ngModel)]="message.comment" name="comment" type="text" #comment="ngModel" required autofocus></ion-input>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

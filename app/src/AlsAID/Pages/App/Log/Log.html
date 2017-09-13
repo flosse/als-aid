@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ "page.log.title" | translate }} {{ session.id }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <h2>{{ "page.log.patient-meta-data" | translate }}</h2>
+  <ion-list>
+    <ion-item>
+      <p>{{ this.getMetaString() }}</p>
+      <button ion-button icon-only item-right (click)="showMetaUpdateModal(session.meta)">
+        <ion-icon name="create-outline"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+
+  <h2>{{ "page.log.logs" | translate }}</h2>
+  <ion-list>
+    <ion-item *ngFor="let log of session.logs">
+      <p class="message">{{ log.message }}</p>
+      <p class="date">{{ log.date.format("YYYY-MM-DD HH:mm:ss") }}</p>
+      <button ion-button icon-only item-right (click)="showLogUpdateModal(log)">
+        <ion-icon name="create-outline"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

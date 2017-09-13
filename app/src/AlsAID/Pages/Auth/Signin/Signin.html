@@ -1,0 +1,48 @@
+<ion-content class="auth-container signin-page">
+
+  <ion-list>
+    <div class="logo">
+      <img src="assets/img/logo.png">
+    </div>
+
+    <form #signinForm="ngForm" novalidate>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input [(ngModel)]="data.email" name="email" type="email" #email="ngModel" spellcheck="false" autocapitalize="off" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>{{ "global.password" | translate }}</ion-label>
+        <ion-input [(ngModel)]="data.password" name="password" type="password" #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button class="button-shiny" ion-button full (click)="signin(signinForm)" type="submit">
+              {{ "global.signin" | translate }}
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button class="button-inverse" ion-button full (click)="signup()">
+              {{ "global.create-account" | translate }}
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button class="button-basic" ion-button full outline (click)="forgotPassword()">
+              {{ "global.forgot-password" | translate }}?
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </form>
+  </ion-list>
+
+</ion-content>

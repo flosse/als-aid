@@ -1,0 +1,79 @@
+page-cpr {
+    ion-header::after {
+        height: 0 !important;
+    }
+
+    ion-content {
+
+        ion-grid.header-grid {
+            background-color: color($colors, primary) !important;
+            padding: 0;
+
+            ion-row {
+                text-align: center;
+
+                &:nth-child(2) {
+                    margin-top: 10px;
+                    border-top: 1px solid rgba(255, 255, 255, .2) !important;
+
+                    ion-col {
+                        padding: 15px 0;
+
+                        &:nth-child(1) {
+                            border-right: 1px solid rgba(255, 255, 255, .2) !important;
+                        }
+                    }
+                }
+            }
+
+            h1 {
+                color: color($colors, _gray) !important;
+                font-size: 34px;
+                font-weight: 400;
+                margin: 0 !important;
+            }
+
+            p {
+                color: darken(color($colors, _gray), 10%) !important;
+                font-size: 11px;
+                font-weight: 100;
+                margin: 3px 0 0 0;
+                text-transform: uppercase;
+            }
+
+            h4 {
+                display: inline !important;
+                color: color($colors, _gray) !important;
+                font-size: 14px;
+                font-weight: 400;
+                margin: 0 5px 0 0;
+            }
+
+            span {
+                color: darken(color($colors, _gray), 10%) !important;
+                font-size: 14px;
+                font-weight: 100;
+            }
+        }
+
+        ion-list {
+
+            border: 1px solid rgba(0, 0, 0, .1) !important;
+            margin: 10px !important;
+
+            ion-item {
+                p {
+                    font-size: 1.6rem !important;
+                    line-height: 5rem !important;
+                }
+
+                button {
+                    margin: 0 !important;
+                    height: 4rem !important;
+                    font-size: 2rem !important;
+                    padding: 0 10px !important;
+                }
+            }
+        }
+    }
+}

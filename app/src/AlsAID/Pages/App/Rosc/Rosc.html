@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>{{ "page.rosc.title" | translate }}</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <h2>{{ "page.rosc.title" | translate }}</h2>
+
+  <p>{{ "page.rosc.notice" | translate }}</p>
+
+  <ion-list>
+    <ion-item *ngFor="let checkbox of checkboxes">
+      <ion-label>{{ checkbox.name }}</ion-label>
+      <ion-checkbox (click)="onClick(checkbox)" [(ngModel)]="checkbox.checked"></ion-checkbox>
+      <p>{{ checkbox.name }}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid class="sticks-to-footer">
+    <ion-row>
+      <ion-col width-100>
+        <button class="button-shiny" ion-button block (click)="stableRosc()">
+          {{ "page.rosc.button-1" | translate }}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,28 @@
+{
+  "name": "alsaid",
+  "app_id": "",
+  "documentRoot": "www",
+  "proxies": [
+    {
+      "path": "/auth/signin",
+      "proxyUrl": "http://localhost:8100/auth/signin"
+    },
+    {
+      "path": "/auth/signup",
+      "proxyUrl": "http://localhost:8100/auth/signup"
+    },
+    {
+      "path": "/auth/signout",
+      "proxyUrl": "http://localhost:8100/auth/signout"
+    },
+    {
+      "path": "/forgot",
+      "proxyUrl": "http://localhost:8100/forgot"
+    }
+  ],
+  "integrations": {
+    "gulp": {}
+  },
+  "type": "ionic-angular",
+  "watchPatterns": []
+}

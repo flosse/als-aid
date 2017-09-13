@@ -1,0 +1,41 @@
+page-log {
+
+    ion-content {
+        h2 {
+            display: inline;
+            font-weight: 600;
+            line-height: 6rem;
+            font-size: 2rem;
+            margin-left: 20px !important;
+        }
+    }
+
+    ion-list {
+        border: 1px solid rgba(0, 0, 0, .1) !important;
+        margin: 0 10px 10px 10px !important;
+
+        button {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+
+        span {
+            color: #ccc !important;
+        }
+
+        p {
+            &.message {
+                font-size: 1.3rem !important;
+            }
+
+            &.date {
+                font-size: 1.2rem !important;
+                color: #c1c1c1 !important;
+            }
+        }
+
+        ion-label {
+            white-space: normal;
+        }
+    }
+}

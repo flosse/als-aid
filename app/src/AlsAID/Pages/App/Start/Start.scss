@@ -1,0 +1,29 @@
+page-start {
+    ion-content {
+
+        button {
+            position: absolute !important;
+            width: 90% !important;
+            left: 5% !important;
+            right: 5% !important;
+            bottom: 20px !important;
+            text-transform: none !important;
+            font-weight: 500 !important;
+            font-size: 1.6rem !important;
+            height: 5rem !important;
+            color: #fff !important;
+            background-color: color($colors, _shiny) !important;
+        }
+    }
+
+    ion-list {
+        border: 1px solid rgba(0, 0, 0, .1) !important;
+
+        img {
+            height: calc(40vh - 80px) !important;
+            width: auto !important;
+            margin: auto !important;
+            display: block !important;
+        }
+    }
+}

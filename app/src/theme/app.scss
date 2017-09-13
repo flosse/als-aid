@@ -1,0 +1,143 @@
+.auth-container {
+    background: linear-gradient(to bottom, color($colors, primary) 0%, #24399e 100%);
+
+    img {
+        margin-top: 4rem !important;
+        max-width: 40% !important;
+    }
+
+    ion-grid {
+        margin-top: 4rem;
+    }
+
+    .logo {
+        padding: 50px 0;
+        min-height: 150px;
+        text-align: center;
+    }
+
+    ion-item {
+        background-color: transparent !important;
+    }
+
+    ion-label {
+        font-weight: 100;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, .54) !important;
+    }
+
+    input {
+        color: white !important;
+        line-height: 30px;
+    }
+
+    button {
+        text-transform: none !important;
+        font-weight: 500 !important;
+        font-size: 1.6rem !important;
+        height: 5rem !important;
+
+        &.button-shiny {
+            color: #fff !important;
+            background-color: color($colors, _shiny) !important;
+        }
+
+        &.button-inverse {
+            color: #3f51b5 !important;
+            background-color: #fff !important;
+        }
+
+        &.button-basic {
+            font-weight: 300 !important;
+            color: #fff !important;
+            border: 0 !important;
+        }
+    }
+}
+
+ion-content {
+    background-color: color($colors, _gray) !important;
+}
+
+.menu-inner ion-content {
+    background-color: #fff !important;
+}
+
+ion-menu {
+    .scroll-content {
+        overflow-y: hidden !important;
+    }
+
+    ion-avatar {
+        img {
+            height: 60px !important;
+            width: 60px !important;
+        }
+    }
+}
+
+.toolbar-title {
+    font-weight: 400 !important;
+}
+
+ion-header::after {
+    height: 0 !important;
+}
+
+.menu-inner {
+    ion-list-header {
+        padding-left: 16px !important;
+        min-height: 4.5rem !important;
+        font-size: 1.4rem !important;
+        color: #757575 !important;
+        background-color: color($colors, primary) !important;
+
+        ion-item {
+            background-color: color($colors, primary) !important;
+
+            h2 {
+                color: #fff;
+            }
+
+            h4 {
+                font-size: 1.2rem;
+                color: #aaa !important;
+            }
+        }
+    }
+}
+
+ion-grid.sticks-to-footer {
+    position: absolute;
+    bottom: 0;
+
+    button {
+        height: 8vh !important;
+        color: #000;
+        text-transform: none;
+
+        span {
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+
+        &.button-shiny {
+            color: #fff !important;
+            background-color: color($colors, _shiny) !important;
+        }
+
+        &.button-inverse {
+            color: #3f51b5 !important;
+            background-color: #fff !important;
+        }
+    }
+}
+
+ion-menu {
+    ion-item-divider {
+        height: 2px !important;
+        min-height: 2px !important;
+        max-height: 2px !important;
+        margin: 16px 0;
+    }
+}

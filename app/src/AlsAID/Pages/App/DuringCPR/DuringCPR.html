@@ -1,0 +1,29 @@
+<ion-header no-border>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()" color="primary">
+        {{ "page.duringcpr.skip" | translate }}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides (ionSlideWillChange)="onSlideChangeStart($event)" pager>
+
+    <ion-slide>
+      <h2 class="slide-title">{{ "page.duringcpr.during-cpr" | translate }}</h2>
+      <ion-list text-left *ngFor="let number of numbers" style="margin: 0 16px">
+          <h4>- {{ "page.duringcpr.during-cpr-line-" + number | translate }}</h4>
+      </ion-list>
+    </ion-slide>
+
+    <ion-slide>
+      <h2 class="slide-title">{{ "page.duringcpr.reversible-causes" | translate }}</h2>
+      <ion-list text-left *ngFor="let number of numbers" style="margin: 0 16px">
+          <h4>- {{ "page.duringcpr.reversible-causes-line-" + number | translate }}</h4>
+      </ion-list>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

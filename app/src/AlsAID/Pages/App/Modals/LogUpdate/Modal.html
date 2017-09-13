@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ "page.modals.update-log-title" | translate }}
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="md-checkmark" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>{{ "global.message" | translate }}</ion-label>
+      <ion-input [(ngModel)]="log.message" name="message" type="text" #message="ngModel" required></ion-input>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

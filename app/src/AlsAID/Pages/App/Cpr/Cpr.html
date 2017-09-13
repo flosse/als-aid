@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>{{ "page.cpr.title" | translate }}</ion-title>
+
+    <ion-buttons end>
+        <button style="padding: 0 6px;" ion-button icon-only (click)="openCommentModal()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid class="header-grid">
+    <ion-row>
+      <ion-col>
+          <h1>{{ duration }}</h1>
+          <p>{{ "global.duration" | translate }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-50>
+          <h4>{{ "global.begin" | translate }}</h4>
+          <span>{{ begin }}</span>
+      </ion-col>
+      <ion-col width-50>
+          <h4>{{ "global.finish" | translate }}</h4>
+          <span>{{ finish }}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-item *ngFor="let button of buttons">
+      <p *ngIf="button.isToggle === false">{{ button.name }}</p>
+      <button *ngIf="button.isToggle === false" ion-button icon-left item-right (click)="clickButton(button)">
+        <ion-icon name="add-outline"></ion-icon>
+        {{ button.amount }}
+      </button>
+
+      <ion-label *ngIf="button.isToggle === true"><p>{{ button.name }}</p></ion-label>
+      <ion-toggle *ngIf="button.isToggle === true" [(ngModel)]="button.state" (ionChange)="toggleButton(button)"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ "page.outcome.title" | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-item *ngIf="alive === false">
+      <h4>{{ "page.outcome.not-alive-message" | translate }}</h4>
+      <h2>{{ date }}</h2>
+    </ion-item>
+
+    <ion-item *ngIf="alive === true">
+      <h4>{{ "page.outcome.alive-message" | translate }}</h4>
+      <h2>{{ date }}</h2>
+    </ion-item>
+
+    <ion-grid class="sticks-to-footer">
+        <ion-row>
+          <ion-col width-50>
+            <button class="button-shiny" ion-button block (click)="stopSession()">
+              {{ "page.outcome.button-1" | translate }}
+            </button>
+          </ion-col>
+          <ion-col width-50>
+            <button class="button-inverse" ion-button block (click)="openLogs()">
+              {{ "page.outcome.button-2" | translate }}
+            </button>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>
