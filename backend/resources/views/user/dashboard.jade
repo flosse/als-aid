@@ -1,0 +1,107 @@
+extends ../layout
+
+block content
+    .page-header
+        h3.chart_outcome User's dashboard
+
+        h4= `Total Valid Sessions: ${total}`
+
+        h4= `ROSC Sessions: ${rosc}`
+
+        h4= `Outcome metrics: ${outcome} %`
+
+        .container-donate.chart
+            canvas#outcomeChart(width='200', height='200')
+         .container-donate.chart
+            canvas#barChart(width='200', height='200')
+            script.
+                $(document).ready(function() {
+                var bar_data=!{barchart_data}
+                var label_bar=!{label_barchart}
+                var barColor = !{bar_colors};
+                var barBorder = !{bar_borders}
+
+                var rosc=!{rosc}
+                rosc = +rosc;
+                var total = !{total};
+                total = +total;
+                var bar_res = bar_data.map(function(item) {
+                    return +item;
+                });
+                var ctxOutcome = document.getElementById("outcomeChart").getContext('2d');
+                var outcomeChart = new Chart(ctxOutcome, {
+                     type: 'pie',
+                     data: {
+                        datasets: [{
+                            data: [rosc, total-rosc],
+                            backgroundColor: ['rgba(139,195,74,0.8)', 'rgba(255,87,34 ,0.8)']
+                            }],
+                            labels: [
+                                'ROSC',
+                                'Deaths',
+                            ],
+                        },
+                     options: {
+                        legend: {
+                            labels: {
+                                // This more specific font property overrides the global property
+                                fontSize: 16,
+                                fontColor: 'black'
+                            }
+                        },
+                        title: {
+                            display: true,
+                            position: 'top',
+                            fontSize: 16,
+                            fontColor: 'black',
+                            text: 'Outcome metrics'
+                        }
+                     }
+                });
+                var ctx = document.getElementById("barChart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'horizontalBar',
+                    data: {
+                        labels: label_bar,
+                        datasets: [{
+                            label: 'Hands-on Time, %',
+                            data: bar_res,
+                            backgroundColor: barColor,
+                            borderColor: barBorder,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        title: {
+                        display: true,
+                        position: 'top',
+                        fontSize: 16,
+                        fontColor: 'black',
+                        text: 'Hands-on time by sessions'
+                        },
+                        scales: {
+                            xAxes: [{
+                                ticks: {
+                                    suggestedMin: 0,
+                                    suggestedMax: 100,
+                                    callback: function(value, index, values) {
+                                        return value + '%';
+                                    },
+                                    fontColor: 'black',
+                                    fontSize: 14
+                                },
+                                scaleLabel: {
+                                    display: false,
+                                }
+                            }],
+                            yAxes: [{
+                                ticks: {
+                                    fontColor: 'black',
+                                    fontSize: 14
+                                }
+                            }]
+                            }
+                            }
+                        });
+
+                    });

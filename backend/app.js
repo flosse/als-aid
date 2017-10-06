@@ -61,7 +61,7 @@ if (typeof process.env.NODE_ENV === "production") {
  */
 
 if (typeof process.env.REDIS_URL !== "undefined") {
-    var Redis = RedisPackage.createClient();
+    var Redis = RedisPackage.createClient(process.env.REDIS_URL);
 } else {
     var Redis = RedisPackage.createClient({
         host: process.env.REDIS_HOST,
@@ -122,7 +122,8 @@ app.set("view engine", "jade");
 app.use(compression());
 app.use(sass({
     src: path.join(__dirname, "public"),
-    dest: path.join(__dirname, "public")
+    dest: path.join(__dirname, "public"),
+    prefix: '/css'
 }));
 app.use(morgan("dev"));
 app.use(bodyParser.json());
@@ -135,7 +136,8 @@ app.use(flash());
 app.use((req, res, next) => {
     let paths = [
         "/forgot",
-        "/forgot/"
+        "/forgot/",
+        "/account/profile"
     ];
     if (paths.indexOf(req.path) > -1) {
         return next();
@@ -156,7 +158,7 @@ app.use((req, res, next) => {
     }
 });
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:8100");
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With,content-type");
     res.setHeader("Access-Control-Allow-Credentials", true);

@@ -1,0 +1,64 @@
+extends layout
+
+block content
+  .page-header.text-center
+    h3 About project
+    .row
+    .row.padd-top
+      .col-md-6.colpadd
+        p.large-text Advanced Life Support nach 2015 ERC Leitlinien
+        p
+          button.btn.btn-outline-primary.theme-color(type='button') Find more about the features
+      .col-md-6
+        img(src='img/demo-screen.png', width='340px')
+  .page-header.text-center
+    h3 About us
+    .row
+  .col-xs-12.col-sm-offset-3.col-sm-6
+    .panel.panel-default
+      .panel-heading.c-list
+        span.title Who we are
+      ul#contact-list.list-group
+        li.list-group-item
+          .col-xs-12.col-sm-3
+            img.img-responsive.img-circle(src='http://api.randomuser.me/portraits/men/49.jpg', alt='Abdallah Wakileh')
+          .col-xs-12.col-sm-9
+            span.name Abdallah Wakileh
+            br
+            span.glyphicon.glyphicon-map-marker.text-muted.c-info(data-toggle='tooltip', title='Germany')
+            span.visible-xs
+              span.text-muted Germany
+              br
+            span.glyphicon.glyphicon-earphone.text-muted.c-info(data-toggle='tooltip', title='N.A.')
+            span.visible-xs
+              span.text-muted N.A.
+              br
+            span.fa.fa-comments.text-muted.c-info(data-toggle='tooltip', title='a.wakileh@gmail.com')
+            span.visible-xs
+              span.text-muted a.wakileh@gmail.com
+              br
+          .clearfix
+        li.list-group-item
+          .col-xs-12.col-sm-3
+            img.img-responsive.img-circle(src='http://api.randomuser.me/portraits/men/97.jpg', alt='Markus Kohlhase')
+          .col-xs-12.col-sm-9
+            span.name Markus Kohlhase
+            br
+            span.glyphicon.glyphicon-map-marker.text-muted.c-info(data-toggle='tooltip', title='Germany')
+            span.visible-xs
+              span.text-muted Germany
+              br
+            span.glyphicon.glyphicon-earphone.text-muted.c-info(data-toggle='tooltip', title='N.A.')
+            span.visible-xs
+              span.text-muted N.A.
+              br
+            span.fa.fa-comments.text-muted.c-info(data-toggle='tooltip', title='mail@markus-kohlhase.de')
+            span.visible-xs
+              span.text-muted mail@markus-kohlhase.de
+              br
+          .clearfix
+
+  .clearfix
+
+
+

@@ -1,5 +1,5 @@
 $(document).ready(function() {
 
-  // Place JavaScript code here...
+  $("#carousel-tutorial").carousel({ interval: false })
 
 });

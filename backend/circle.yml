@@ -1,0 +1,20 @@
+machine:
+  node:
+    version: 6.1.0
+dependencies:  
+  override:
+    - npm install
+test:
+  override:
+    - "true"
+deployment:
+  development:
+    branch: master
+    heroku: 
+      appname: dev-alsaid    
+  
+  production:
+    branch: production
+    heroku: 
+      appname: prod-alsaid
+    

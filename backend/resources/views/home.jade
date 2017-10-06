@@ -1,5 +1,48 @@
 extends layout
 
 block content
-  h1 AlsAID
-  p.lead Saving lives.
+  .top-content
+    .left-info
+      h1 AlsAID
+      p.lead Saving lives.
+    .right-info
+      img(class='gplay', src='img/googleplay.png')
+
+  .carousel-container
+    #carousel-tutorial.carousel.slide(data-ride='carousel')
+      // Indicators
+      ol.carousel-indicators
+        li.active(data-target='#carousel-tutorial', data-slide-to='0')
+        li(data-target='#carousel-tutorial', data-slide-to='1')
+        li(data-target='#carousel-tutorial', data-slide-to='2')
+        li(data-target='#carousel-tutorial', data-slide-to='3')
+      // Wrapper for slides
+      .carousel-inner(role='listbox')
+        .item.active
+          img(src='img/pic1.png', alt='...')
+          .carousel-caption
+            |
+        .item
+          img(src='img/pic2.png', alt='...')
+          .carousel-caption
+            |
+        .item
+          img(src='img/pic3.png', alt='...')
+          .carousel-caption
+            |
+        .item
+          img(src='img/pic4.png', alt='...')
+          .carousel-caption
+            |
+        |
+      // Controls
+      a.left.carousel-control(href='#carousel-tutorial', role='button', data-slide='prev')
+        span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+        span.sr-only Previous
+      a.right.carousel-control(href='#carousel-tutorial', role='button', data-slide='next')
+        span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+        span.sr-only Next
+
+  .container-donate
+    a(href='/donate')
+      img(src="img/button-donate.png")

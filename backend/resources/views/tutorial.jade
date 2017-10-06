@@ -1,0 +1,97 @@
+extends layout
+
+block content
+  .page-header.text-center
+    h3 Tutorial page
+    h3 Guide for AlsAID mobile application!
+  .tutorial-container
+    .row
+        .col-md-6.text-center
+            p 1. If you have account you can log in
+        .col-md-6.text-center
+            p 2. If you are new user click 'Create account' button
+    .row.bottom-big-buffer
+        .col-md-6.text-center
+            img(src='img/01_signin.png')
+        .col-md-6.text-center
+            img(src='img/02_signup.png')
+    .row
+        .col-md-6.text-center
+            p 3. Enter your data and go to start page
+        .col-md-6.text-center
+            p 4. On 'Settings page' you can change your profile picture, firstname, lastname and language
+    .row.bottom-big-buffer
+        .col-md-6.text-center
+            img(src='img/03_signup_keyboard.png')
+        .col-md-6.text-center
+            img(src='img/10_settings_page.png')
+    .row
+        .col-md-6.text-center
+            p 5. Then you go to 'Start screen'. To start new session click 'Start ALS' button
+        .col-md-6.text-center
+            p 6. Then session starts and you can manage it
+    .row.bottom-big-buffer
+        .col-md-6.text-center
+            img(src='img/04_start_als.png')
+        .col-md-6.text-center
+            img(src='img/05_rhythm_analysis.png')
+    .row
+        .col-md-6.text-center
+            p 5. By clicking on coloured square areas you go to CPR screen where you can change all parameters
+        .col-md-6.text-center
+            p 6. You can add comment by clicking '+' on the top right corner
+    .row.bottom-big-buffer
+        .col-md-6.text-center
+            img(src='img/06_cpr_screen.png')
+        .col-md-6.text-center
+            img(src='img/07_cpr_add_comment.png')
+    .row
+        .col-md-6.text-center
+            p 7. From anywhere you can access hamburger menu by clicking 'menu button' on the top left corner
+        .col-md-6.text-center
+            p 8. For managing 'return of spontaneous circulation' you click 'ROSC' button
+    .row.bottom-big-buffer
+        .col-md-6.text-center
+            img(src='img/08_menu.png')
+        .col-md-6.text-center
+            img(src='img/12_stable_rosc_screen.png')
+    .row
+        .col-md-6.text-center
+            p 9. Then you will be promted if the session was valid. Please validate only real sessions
+        .col-md-6.text-center
+            p 10. After that you are redirected to 'Outcome page'
+    .row.bottom-big-buffer
+        .col-md-6.text-center
+            img(src='img/13_validate_modal.png')
+        .col-md-6.text-center
+            img(src='img/14_outcome.png')
+    .row
+        .col-md-6.text-center
+            p 11. In case of patient death you should check all symptoms and confirm death
+        .col-md-6.text-center
+            p 12. All events in the app are logged to database, processed and analyzed by our AI engine. You can see all logs by clicking 'CPR Logs' in menu
+    .row.bottom-big-buffer
+        .col-md-6.text-center
+            img(src='img/12_death_screen.png')
+        .col-md-6.text-center
+            img(src='img/15_cpr_logs.png')
+    .row
+        .col-md-6.text-center
+            p 13. You can click on any log to see details
+        .col-md-6.text-center
+            p 14. Under section 'Patient supplementary data' you can add information about patient
+    .row.bottom-big-buffer
+        .col-md-6.text-center
+            img(src='img/17_cpr_log_detail.png')
+        .col-md-6.text-center
+            img(src='img/18_update_metadata.png')
+    .row
+        .col-md-6.text-center
+            p 15. You can send all logs to email
+        .col-md-6.text-center
+            p 16. To get more information about project go to 'About ALS Aid' from hamburger menu
+    .row.bottom-big-buffer
+        .col-md-6.text-center
+            img(src='img/20_email_sent.png')
+        .col-md-6.text-center
+            img(src='img/09_about_page.png')

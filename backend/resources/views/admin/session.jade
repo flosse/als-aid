@@ -14,6 +14,7 @@ block content
                         th User
                         th Meta
                         th Logs
+                        th Is valid?
                         th(style="min-width: 220px") Actions
                 tbody
                     each session in sessions
@@ -22,6 +23,7 @@ block content
                             td= session.related("user").get("email")
                             td= JSON.stringify(session.related("meta").attributes)
                             td= session.related("logs").length
+                            td= session.isValid()
                             td
                                 .btn-group
                                     a(href='/admin/sessions/' + session.get("id") + '/view')

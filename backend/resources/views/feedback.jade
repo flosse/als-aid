@@ -1,8 +1,9 @@
 extends layout
 
 block content
-  .page-header
-    h3 Feedback
+  .page-header.text-center
+    h3 Contact us
+    h3 Please send us your questions or suggestions!
 
   form.form-horizontal(method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
@@ -21,5 +22,23 @@ block content
     .form-group
       .col-sm-offset-2.col-sm-8
         button.btn.btn-primary(type='submit')
-          i.fa.fa-envelope
+          i.fa.fa-paper-plane
           | Send
+
+  .page-header.text-center
+    h3 We are located here:
+    div(id='map')
+    script.
+      function initMap() {
+        var uluru = {lat: 50.848174, lng: 12.892655};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+
+    script(async, defer, src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD14xapY4gUekFk_dlqUZlA0S8KOhz0F74&callback=initMap')

@@ -1,0 +1,236 @@
+'use strict';
+
+module.exports = {
+
+    "global": {
+
+        "signout": "Abmelden",
+        "signin": "Anmelden",
+        "signup": "Registrieren",
+        "create-account": "Profil erstellen",
+        "password": "Passwort",
+        "password-confirm": "Passwort bestaetigen",
+        "forgot-password": "Passwort vergessen?",
+        "duration": "Dauer",
+        "begin": "Beginn",
+        "finish": "Ende",
+        "saved": "Gespeichert",
+        "today": "Tag",
+        "week": "Woche",
+        "month": "Monat",
+        "message": "Nachricht",
+        "name": "Name",
+        "address": "Addresse",
+        "birthday": "Geburtstag",
+        "location": "Ort",
+        "gender": "Geschlecht",
+        "male": "Maennlich",
+        "female": "Weiblich",
+        "comment": "Kommentar",
+        "comment-added": "Kommentar hinzugefuegt.",
+        "all": "Alle",
+        "yes": "Yes",
+        "no": "No",
+        "are-you-sure-question": "Are you sure?",
+        "are-you-validate-session": "Do you validate this session?",
+        "name-added": "Daten erfolgreich gespeichert",
+        "comment-text": "Kommentar hinzufuegen",
+        "invite-to-log": "Klicken Sie um weitere Massnahmen zu erfassen",
+        "saving": "Speichern�"
+    },
+
+    "page": {
+
+
+        "forgot-password": {
+            "notice": "Bitte geben Sie Ihre email addresse ein und wir senden Ihnen Anweisungen wie Sie Ihr Passwort zuruecksetzen koennen.",
+            "reset-instructions": "Ich will mein Passwort zuruecksetzen",
+            "back": "Zurueck zur Anmeldung"
+        },
+
+        "signin": {
+            "title": "Profil",
+            "welcome": "Willkommen {{ email }}",
+            "info": "Anmelden..."
+        },
+
+        "signup": {
+            "title": "Profil",
+            "welcome": "Willkommen {{ email }}",
+            "info": "Kostenlos registrieren..."
+        },
+
+        "about": {
+            "title": "ALS Aid",
+            "header": "App Beschreibung und Haftungsausschluss",
+            "content": "ALS Aid ist eine mobile app welche medizinisches Personal bei der Dokumentation Ihrer Reanimationsmassnahmen am Erwachsenen assistiert.  Derzeit werden die Englische und Deutsche Sprache unterstuetzt. Die Autoren und Herausgeber von ALS Aid uebernehmen keine Gewaehr ueber den Inhalt. Sie koennen ausserdem in keiner Weise direkt oder indirekt fuer Verluste Verletzungen oder Schaeden an Personen oder Eigentum haftbar gemacht werden."
+        },
+
+        "account": {
+            "title": "Profil",
+            "welcome": "Willkommen {{ email }}",
+            "change-language": "Sprache aendern",
+            "firstname": "Vorname",
+            "lastname": "Nachname",
+            "saving": "speichern�"
+        },
+
+        "cpr": {
+            "title": "CPR",
+            "prefix": "CPR",
+            "button-1": "Thoraxkompression",
+            "button-2": "Defibrillation >150J",
+            "button-3": "Adrenalin 1mg",
+            "button-4": "Amiodaron 150mg"
+        },
+
+        "home": {
+            "title": "Rhythmusanalyse",
+            "button-fibrillation": "Kammerflimmern",
+            "button-pea": "PEA",
+            "button-pulse": "Pulslose VT",
+            "button-asystole": "Asystolie",
+            "button-abbruch": "Abbruch ALS",
+            "button-rosc": "ROSC"
+        },
+
+        "log": {
+            "title": "Reanimation Nummer",
+            "patient-meta-data": "Patienten Metadaten",
+            "logs": "CPR Historie",
+            "no-meta": "Noch keine Metadaten. Fuegen Sie welche hinzu."
+        },
+
+        "log-list": {
+            "title": "Log Liste",
+            "retrieving": "CPR Historie wird geladen.",
+            "sending": "Senden...",
+            "sent": "Die Email wurde versendet.",
+            "failed": "Email konnte nicht versendet werden.",
+            "open": "Oeffnen",
+            "send-as-email": "Als Email senden",
+            "close": "Schliessen"
+        },
+
+        "modals": {
+            "update-log-title": "Reanimationsprotokoll updaten",
+            "update-meta-title": "Metadaten updaten",
+            "comment-title": "Kommentar/Massnahme hinzufuegen",
+            "comment-placeholder": "Bitte schreiben Sie Ihr Kommentar.",
+            "comment-prefix": "Komment per {{ email }}"
+        },
+
+        "outcome": {
+            "title": "Outcome",
+            "message-when-alive": "Der Patient wurde erfolgreich wiederbelebt",
+            "message-when-dead": "Zeitpunkt des Todes",
+            "message": "Der Patient ist {{ date }} {{ status }}",
+            "button-1": "Zurueck zu Start",
+            "button-2": "Reanimationsprotokoll oeffnen",
+            "alive-message": "Der Patient wurde erfolgreich wiederbelebt",
+            "not-alive-message": "Zeitpunkt des Todes"
+        },
+
+        "rosc": {
+            "title": "Return of Spontaneous Circulation",
+            "notice": "Sofortige Behandlung:",
+            "prefix": "ROSC sofortige Behandlung",
+            "checkbox-1": "ABCDE Vorgehensweise",
+            "checkbox-2": "Oxygenierung SpO2 94-98%",
+            "checkbox-3": "Normokapnie anstreben",
+            "checkbox-4": "12-Kanal EKG; ggf PCI",
+            "checkbox-5": "SBP >100mmHg halten",
+            "checkbox-6": "Temperaturmanagement",
+            "button-1": "ROSC stabil",
+            "button-2": "Erneute Reanimation"
+        },
+
+        "start": {
+            "title": "Start",
+            "image-1": "1. BLS 30:2",
+            "image-2": "2. Pads Kleben",
+            "start": "Start ALS",
+            "restart": "ALS erneut starten",
+            "warning": "Eine ALS session zur Zeit im Gange. Sind Sie sicher dass Sie erneut starten moechten?",
+            "validation-info": "Only valid sessions can be used for research purposes"
+        },
+
+        "status": {
+            "title": "Status",
+            "prefix": "Status Checked",
+            "header": "Abbruch der Reanimation",
+            "notice": "Beobachten Sie den Patienten nach Abbruch der Reanimation fuer mindestens 5 Minuten, bevor Sie den Tod feststellen. Als Todeszeitpunkt wurd der Zeitpunkt gewaehlt bei dem folgende Kriterien erfuellt sind:",
+            "outcome": "Tod wurde festgestellt",
+            "open-log": "Reanimationsprotokoll oeffnen",
+            "checkbox-1": "Ueber 5 Minuten anhaltenden Atem-Kreislaufstillstand",
+            "checkbox-2": "fehlende Cornealreflexe",
+            "checkbox-3": "Fehlende Lichtreaktion der Pupillen",
+            "checkbox-4": "Fehlen jeder motorischen Antwort auf supraorbitalen Druck"
+        },
+
+        "tabs": {
+            "title": "Tabs"
+        },
+
+        "tutorial": {
+            "title": "4H4T",
+            "skip": "Zurueck",
+            "during-cpr": "WAEHREND CPR",
+            "during-cpr-line-1": "CPR hoher Qualitaet sichern: Frequnez, Tiefe, Entlastung",
+            "during-cpr-line-2": "Unterbrechungen der CPR minimieren",
+            "during-cpr-line-3": "Sauerstoff geben",
+            "during-cpr-line-4": "Kapnographie verwenden",
+            "during-cpr-line-5": "Thoraxkompression ohne Unterbrechungen, wenn Atemweg gesichert",
+            "during-cpr-line-6": "Gefaesszugang (intravenoes, intraossaer)",
+            "during-cpr-line-7": "Adrenalin alle 3-5 Minuten",
+            "during-cpr-line-8": "Amiodaron nach dem 3. Schock",
+            "reversible-causes": "REVERSIBLE URSACHEN",
+            "reversible-causes-line-1": "Hypoxie",
+            "reversible-causes-line-2": "Hypovolaemie",
+            "reversible-causes-line-3": "Hypo-/hyperkalaemie/",
+            "reversible-causes-line-4": "Hypothermie",
+            "reversible-causes-line-5": "Thromboembolien - Lungenembolie oder Herzinfarkt",
+            "reversible-causes-line-6": "HerzbeutelTamponade",
+            "reversible-causes-line-7": "Toxine",
+            "reversible-causes-line-8": "SpannungspneumoThorax"
+        },
+
+        "duringcpr": {
+            "title": "During CPR",
+            "skip": "Zurueck",
+            "during-cpr": "WAEHREND CPR",
+            "during-cpr-line-1": "CPR hoher Qualitaet sichern: Frequnez, Tiefe, Entlastung",
+            "during-cpr-line-2": "Unterbrechungen der CPR minimieren",
+            "during-cpr-line-3": "Sauerstoff geben",
+            "during-cpr-line-4": "Kapnographie verwenden",
+            "during-cpr-line-5": "Thoraxkompression ohne Unterbrechungen, wenn Atemweg gesichert",
+            "during-cpr-line-6": "Gefaesszugang (intravenoes, intraossaer)",
+            "during-cpr-line-7": "Adrenalin alle 3-5 Minuten",
+            "during-cpr-line-8": "Amiodaron nach dem 3. Schock",
+            "reversible-causes": "REVERSIBLE URSACHEN",
+            "reversible-causes-line-1": "Hypoxie",
+            "reversible-causes-line-2": "Hypovolaemie",
+            "reversible-causes-line-3": "Hypo-/hyperkalaemie",
+            "reversible-causes-line-4": "Hypothermie",
+            "reversible-causes-line-5": "Thromboembolien - Lungenembolie oder Herzinfarkt",
+            "reversible-causes-line-6": "HerzbeutelTamponade",
+            "reversible-causes-line-7": "Toxine",
+            "reversible-causes-line-8": "SpannungspneumoThorax"
+        }
+
+    },
+
+    "error": {
+
+        "unknown": "Ein unbekannter Fehler ist aufgetreten.",
+        "fill-the-form": "Bitte ausfuellen.",
+        "retrieve-failed": "History konnte nicht geladen werden.",
+
+        "http": {
+            "0": "Keine Verbindung zum Server. Pruefen Sie Ihre Verbindung und Deaktivieren Sie ggf Ihre Firewall.",
+            "401": "Email oder Passwort ungueltig.",
+            "500": "Server wird gewartet. Bitte versuchen Sie es spaeter erneut."
+        }
+    }
+
+}

@@ -17,6 +17,10 @@ class Migrate extends Command
     }
 
     process() {
+        if (process.env.NODE_ENV !== "development") {
+            return Promise.reject(new Error("Migration can only run in development mode."));
+        }
+
         super.process();
 
         return Redis.flushdbAsync()

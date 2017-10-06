@@ -17,9 +17,9 @@ class MigrateUsersTable
                 is_admin: 1
             },
             {
-                email: "anil@test.com",
+                email: "user@test.com",
                 password: this.password,
-                name: "Anıl ÜNAL"
+                name: "User"
             }
         ];
     }
@@ -32,9 +32,15 @@ class MigrateUsersTable
                 table.string("email");
                 table.string("password");
                 table.string("name").nullable().default(null);
+                //
+                table.string("firstName").nullable().default(null);
+                table.string("lastName").nullable().default(null);
+                table.string("photoUrl").nullable().default(null);
+                //
                 table.string("password_reset_token").nullable();
                 table.boolean("is_admin").default(0);
                 table.boolean("is_blocked").default(0);
+                table.string("language").default("en");
                 table.string("provider").default("self");
                 table.timestamps();
             });

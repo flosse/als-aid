@@ -11,7 +11,6 @@ const mailer = nodemailer.createTransport(sgTransport({
     }
 }));
 
-
 exports.getCheck = (req, res) => {
     if (req.isAuthenticated() === false) {
         return res.status(401).json({
@@ -21,7 +20,10 @@ exports.getCheck = (req, res) => {
 
     return res.status(200).json({
         email: req.user.get("email"),
-        avatar: req.user.getAvatar()
+        avatar: req.user.getAvatar(),
+        firstName: req.user.getFirstName(),
+        lastName: req.user.getLastName(),
+        photoUrl: req.user.getPhotoUrl(),
     });
 };
 
@@ -43,6 +45,13 @@ exports.postSignin = (req, res, next) => {
     const provider = req.body.provider;
     const type = req.body.type;
     const errors = req.validationErrors();
+
+    debugger;
+    var offset = new Date().getTimezoneOffset(); console.log('offset is '+offset);
+     debugger;
+        var getTimezone = require('node-timezone').getTimezone;
+        console.log('node timezone = '+ getTimezone()); // "America/Los_Angeles"
+        debugger;
 
     if (errors) {
         if (type === "mobile") {
@@ -83,7 +92,13 @@ exports.postSignin = (req, res, next) => {
             if (req.body.type === "mobile") {
                 return res.status(200).json({
                     email: user.get("email"),
-                    avatar: user.getAvatar()
+                    avatar: user.getAvatar(),
+                    name: user.getName(),
+                    firstName: user.getFirstName(),
+                    lastName: user.getLastName(),
+                    id: user.getId(),
+                    photoUrl: user.getPhotoUrl(),
+                    isAdmin: user.isAdmin(),
                 });
             }
             return res.redirect(req.session.returnTo || "/");

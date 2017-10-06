@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1 AlsAID
+  p.lead Saving lives.
+  .payment-form-container
+    form.payment-form(method='POST', id='payment-form')
+      input(type='hidden', name='_csrf', value=_csrf)
+      .payment-form-group
+        label
+          span Name
+          input(name='cardholder-name', class='field', placeholder='Adam Smith')
+        label
+          span Phone
+          input(class='field', placeholder='(123) 456-7890', type='tel')
+      .payment-form-group
+        label
+          span Card
+          #card-element.field
+        label
+          span Amount (USD)
+          input(name='amount', class='field', placeholder='10')
+      button(type='submit') Donate!
+      .outcome
+        .error(role='alert')
+        .success Success!
+          .span(class='token')

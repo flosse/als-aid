@@ -2,6 +2,10 @@ const HomeController = require("./controllers/HomeController");
 const AuthController = require("./controllers/AuthController");
 const FeedbackController = require("./controllers/FeedbackController");
 const TestController = require("./controllers/TestController");
+const StripeController = require("./controllers/StripeController");
+const AboutController = require("./controllers/AboutController");
+const LegalController = require("./controllers/LegalController");
+const TutorialController = require("./controllers/TutorialController");
 
 const Admin = {
     DashboardController: require("./controllers/Admin/DashboardController"),
@@ -13,6 +17,7 @@ const Admin = {
 const User = {
     ApiController: require("./controllers/User/ApiController"),
     AccountController: require("./controllers/User/AccountController"),
+    DashboardController: require("./controllers/User/DashboardController"),
 };
 
 module.exports = (app, passport, passportConfig) => {
@@ -41,10 +46,18 @@ module.exports = (app, passport, passportConfig) => {
         next();
     });
 
+    app.use("/user", [passportConfig.isAuthenticated], (req, res, next) => {
+
+        app.get("/user", User.DashboardController.index);
+
+        next();
+    });
+
     app.use("/api/v1", (req, res, next) => {
 
         app.get("/api/v1/session", User.ApiController.index);
         app.post("/api/v1/session/create", User.ApiController.sessionCreate);
+        app.post("/api/v1/session/:sessionID/update", User.ApiController.sessionUpdate);
         app.post("/api/v1/session/send-as-email", User.ApiController.sendAsEmail);
 
         app.post("/api/v1/log/create", User.ApiController.logCreate);
@@ -75,7 +88,14 @@ module.exports = (app, passport, passportConfig) => {
     app.post("/account/password", passportConfig.isAuthenticated, User.AccountController.postUpdatePassword);
     app.post("/account/delete", passportConfig.isAuthenticated, User.AccountController.postDeleteAccount);
     app.get("/account/unlink/:provider", passportConfig.isAuthenticated, User.AccountController.getOauthUnlink);
+    app.post("/account/language", passportConfig.isAuthenticated, User.AccountController.postUpdateLanguage);
 
     app.get("/test", TestController.test);
 
+    app.get("/donate", StripeController.getDonate);
+    app.post("/donate", StripeController.stripeCharge);
+
+    app.get("/about", AboutController.index);
+    app.get("/legal", LegalController.index);
+    app.get("/tutorial", TutorialController.index);
 };

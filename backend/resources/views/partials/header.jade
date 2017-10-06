@@ -7,24 +7,36 @@
         span.icon-bar
         span.icon-bar
       a.navbar-brand(href='/')
-        i.fa.fa-cube
-        | AlsAID
+        img(src='img/logo.png')
     .collapse.navbar-collapse
       ul.nav.navbar-nav
-        if user
-          li(class=(title == 'Feedback') ? 'active' : undefined)
-            a(href='/feedback') Feedback
+        li(class=(title == 'Tutorial') ? 'active' : undefined)
+          a(href='/tutorial')
+            i.fa.fa-info-circle.fa-5x
+        li(class=(title == 'Feedback') ? 'active' : undefined)
+          a(href='/feedback')
+            i.fa.fa-envelope.fa-5x
+        li(class=(title == 'About') ? 'active' : undefined)
+          a(href='/about')
+            i.fa.fa-users.fa-5x
+        li(class=(title == 'Legal') ? 'active' : undefined)
+          a(href='/legal')
+            i.fa.fa-gavel.fa-5x
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=(title == 'Sign in') ? 'active' : undefined)
             a(href='/auth/signin') Sign in
+            i.fa.fa-sign-in.fa-3x
           li(class=(title == 'Create Account') ? 'active' : undefined)
             a(href='/auth/signup') Create Account
+            i.fa.fa-user-plus.fa-3x
         else
           li.dropdown(class=(title == 'Account Management') ? 'active' : undefined)
             a.dropdown-toggle(href='#', data-toggle='dropdown')
-              img(src='#{user.getAvatar()}')
-              i.caret
+                img(src='#{user.get("photoUrl")}')
+                i.caret
+                img(src='#{user.getAvatar()}')
+                i.caret
             ul.dropdown-menu
               li.dropdown-header User
               li
@@ -40,6 +52,11 @@
                   a(href='/admin/sessions') Sessions
                 li
                   a(href='/admin/logs') Logs
+                li.divider
+              if user.isAdmin() === false
+                li.dropdown-header User
+                li
+                  a(href='/user') Dashboard
                 li.divider
               li
                 a(href='/auth/signout') Sign out

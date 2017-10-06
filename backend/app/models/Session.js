@@ -14,6 +14,10 @@ class Session extends BaseModel {
         return true;
     }
 
+    isValid() {
+      return !! this.get("is_valid");
+    }
+
     user() {
         return this.belongsTo(User);
     }

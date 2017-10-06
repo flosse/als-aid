@@ -38,3 +38,23 @@ block content
         button.btn.btn-primary(type='submit')
           i.fa.fa-lock
           | Change Password
+  
+  .page-header
+    h3 Change Language
+
+  form.form-horizontal(action='/account/language', method='POST', id='radio-form')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      label.col-sm-3.control-label Please choose your language:
+      .col-sm-6
+        label.radio.col-sm-3
+          input(type='radio', checked=user.getLanguage() == 'en', name='language', value='en', data-toggle='radio')
+          span English
+        label.radio.col-sm-3
+          input(type='radio', checked=user.getLanguage() == 'de', name='language', value='de', data-toggle='radio')
+          span Deutsch
+    .form-group
+      .col-sm-offset-3.col-sm-4
+       button.btn.btn.btn-primary(type='submit')
+        i.fa.fa-pencil
+        | Change Language

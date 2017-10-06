@@ -9,6 +9,7 @@ html
     title #{title} - AlsAID
     link(rel='shortcut icon', href='/favicon.png')
     link(rel='stylesheet', href='/css/main.css')
+    script(src='/js/lib/jquery-2.2.0.min.js')
 
   body
     include partials/header
@@ -19,9 +20,12 @@ html
 
     include partials/footer
 
-    script(src='/js/lib/jquery-2.2.0.min.js')
+
     script(src='/js/lib/bootstrap.min.js')
     script(src='/js/main.js')
+    script(src='https://js.stripe.com/v3/')
+    script(type="text/javascript", src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js')
+    //script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID
     script.
@@ -31,3 +35,68 @@ html
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-XXXXX-X', 'auto');
       ga('send', 'pageview');
+
+
+
+
+      var stripe = Stripe('pk_test_RH7mVc6Qe4PQ0nAGoP6nMTtB');
+      var elements = stripe.elements();
+
+      var card = elements.create('card', {
+        style: {
+          base: {
+            iconColor: '#666EE8',
+            color: '#31325F',
+            lineHeight: '40px',
+            fontWeight: 300,
+            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+            fontSize: '15px',
+
+            '::placeholder': {
+              color: '#CFD7E0',
+            },
+          },
+        }
+      });
+      card.mount('#card-element');
+
+      function setOutcome(result) {
+        var successElement = document.querySelector('.success');
+        var errorElement = document.querySelector('.error');
+        successElement.classList.remove('visible');
+        errorElement.classList.remove('visible');
+
+        if (result.token) {
+          // Use the token to create a charge or a customer
+          // https://stripe.com/docs/charges
+          successElement.querySelector('.token').textContent = result.token.id;
+          successElement.classList.add('visible');
+
+          var form = document.getElementById('payment-form');
+          var hiddenInput = document.createElement('input');
+          hiddenInput.setAttribute('type', 'hidden');
+          hiddenInput.setAttribute('name', 'stripeToken');
+          hiddenInput.setAttribute('value', result.token.id);
+          form.appendChild(hiddenInput);
+
+          // Submit the form
+          form.submit();
+
+        } else if (result.error) {
+          errorElement.textContent = result.error.message;
+          errorElement.classList.add('visible');
+        }
+      }
+
+      card.on('change', function(event) {
+        setOutcome(event);
+      });
+
+      document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = document.querySelector('form');
+        var extraDetails = {
+          name: form.querySelector('input[name=cardholder-name]').value,
+        };
+        stripe.createToken(card, extraDetails).then(setOutcome);
+      });

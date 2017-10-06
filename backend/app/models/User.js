@@ -25,7 +25,11 @@ class User extends BaseModel {
             id: this.get("id"),
             email: this.get("email"),
             name: this.get("name"),
-            avatar: this.getAvatar()
+            avatar: this.getAvatar(),
+            firstName: this.getFirstName(),
+            lastName: this.getLastName(),
+            photoUrl: this.getPhotoUrl(),
+            language: this.getLanguage(),
         });
     }
 
@@ -66,6 +70,31 @@ class User extends BaseModel {
     isBlocked() {
       return !! this.get("is_blocked");
     }
+
+    getName() {
+      return this.get("name");
+    }
+
+    getFirstName() {
+      return this.get("firstName");
+    }
+
+    getLastName() {
+      return this.get("lastName");
+    }
+
+    getId() {
+      return this.get("id");
+    }
+
+    getPhotoUrl() {
+      return this.get("photoUrl");
+    }
+
+    getLanguage() {
+      return this.get("language");
+    }
+
 };
 
 module.exports = User;

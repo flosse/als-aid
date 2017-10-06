@@ -8825,3 +8825,288 @@ textarea {
 
 .fa {
   margin-right: 6px; }
+
+ /****/
+
+ .payment-form-container {
+    background: #E6EBF1;
+    align-items: center;
+    min-height: 100%;
+    display: flex;
+    width: 100%;
+  }
+
+  .payment-form {
+        width: 480px;
+        margin: 20px auto;
+    }
+
+   .payment-form button {
+            float: left;
+            display: block;
+            background: #666EE8;
+            color: white;
+            box-shadow: 0 7px 14px 0 rgba(49,49,93,0.10),
+                        0 3px 6px 0 rgba(0,0,0,0.08);
+            border-radius: 4px;
+            border: 0;
+            margin-top: 20px;
+            font-size: 15px;
+            font-weight: 400;
+            width: 100%;
+            height: 40px;
+            line-height: 38px;
+            outline: none;
+        }
+
+       .payment-form button:focus {
+            background: #555ABF;
+        }
+
+        .payment-form button:active {
+            background: #43458B;
+        }
+
+        .payment-form .outcome {
+            float: left;
+            width: 100%;
+            padding-top: 8px;
+            min-height: 24px;
+            text-align: center;
+
+
+        }
+
+        .outcome .success, .outcome .error {
+                display: none;
+                font-size: 13px;
+            }
+
+            .outcome .success.visible, .outcome .error.visible {
+                display: inline;
+            }
+
+            .outcome .error {
+                color: #E4584C;
+            }
+
+            .outcome .success {
+                color: #666EE8;
+            }
+
+            .outcome .success .token {
+                font-weight: 500;
+                font-size: 13px;
+            }
+
+
+
+
+
+
+
+
+    .payment-form-group {
+    background: white;
+    box-shadow: 0 7px 14px 0 rgba(49,49,93,0.10),
+                0 3px 6px 0 rgba(0,0,0,0.08);
+    border-radius: 4px;
+    margin-bottom: 20px;
+
+    }
+
+    .payment-form-group label {
+            position: relative;
+            color: #8898AA;
+            font-weight: 300;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 20px;
+            display: block;
+
+
+        }
+        .payment-form-group label > span {
+            width: 20%;
+            text-align: right;
+            float: left;
+        }
+
+      .payment-form-group label .field {
+                background: transparent;
+                font-weight: 300;
+                border: 0;
+                color: #31325F;
+                outline: none;
+                padding-right: 10px;
+                padding-left: 10px;
+                cursor: text;
+                width: 70%;
+                height: 40px;
+                float: right;
+            }
+
+             .payment-form-group label .field::-webkit-input-placeholder { color: #CFD7E0; }
+             .payment-form-group label .field::-moz-placeholder { color: #CFD7E0; }
+             .payment-form-group label .field:-ms-input-placeholder { color: #CFD7E0; }
+
+    .payment-form-group label:not(:last-child) {
+        border-bottom: 1px solid #F0F5FA;
+    }
+
+    .carousel-container {
+      position: relative;
+    }
+
+    .carousel-inner > .item > img {
+      margin: 0 auto!important;
+    }
+
+    .container-donate {
+      position: relative;
+      display: flex;
+    }
+
+    .container-donate > a {
+      margin: 0 auto!important;
+    }
+
+    .chart_outcome {
+      border-bottom: 2px solid rgba(0,0,0,0.1);
+      padding-bottom: 15px;
+    }
+
+    .chart {
+      display: inline-block;
+      width: 50%;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .navbar {
+      min-height: 90px;
+    }
+
+    .navbar-header {
+      margin-right: 40px;
+    }
+
+    .navbar-nav img {
+      width: 70px;
+      height: 70px;
+      margin: -5px 5px -5px;
+      border-radius: 50%;
+    }
+
+    .fa-users, .fa-envelope, .fa-gavel, .fa-info-circle, .fa-sign-in, .fa-user-plus  {
+      color: rgba(48,79,254, 0.7);
+    }
+
+    .active .fa-users, .active .fa-envelope, .active .fa-gavel, .active .fa-info-circle, .active .fa-sign-in, .active .fa-user-plus  {
+      color: rgba(0,38,202, 0.9);
+    }
+
+    .fa-paper-plane {
+      color: white;
+    }
+
+    h1, .h1, h2, .h2, h3, .h3 {
+      margin-top: 50px;
+    }
+
+    .gplay {
+      height: 100px;
+    }
+
+    .top-content {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .left-info {
+      display: inline-flex;
+      flex-direction: column;
+    }
+
+    .right-info {
+      display: inline-flex;
+      padding-top: 35px;
+    }
+
+    #map {
+        width: 70%;
+        height: 400px;
+        background-color: grey;
+        margin: 0 auto;
+      }
+    .bottom-buffer {
+      margin-bottom: 10px;
+    }
+
+    .bottom-big-buffer {
+      margin-bottom: 35px;
+    }
+
+    .caret {
+      color: rgba(48,79,254, 0.7);
+      border-top: 12px dashed;
+      border-right: 8px solid transparent;
+      border-left: 8px solid transparent;
+    }
+
+    .c-list {
+    padding: 0px;
+    min-height: 44px;
+    }
+
+    .title {
+        display: inline-block;
+        font-size: 1.7em;
+        font-weight: bold;
+        padding: 5px 15px;
+    }
+
+    .name {
+    font-size: 1.7em;
+    font-weight: 700;
+    }
+
+    .c-info {
+        padding: 5px 10px;
+        font-size: 1.25em;
+    }
+
+    .panel-default > .panel-heading {
+      background-color: rgba(48,79,254, 0.3);
+    }
+
+    .colpadd {
+      padding-left: 15px;
+      padding-right: 30px;
+    }
+
+    .large-text {
+      font-size: 18px;
+    }
+
+    .padd-top {
+      padding-top: 20px;
+    }
+
+    .theme-color {
+      background-color: rgba(48,79,254, 0.3);
+    }
+
+    .fa-sign-in, .fa-user-plus {
+      margin-top: -15px;
+    }
+
+    .fa-sign-in {
+      margin-left: 15px;
+    }
+
+    .fa-user-plus {
+      margin-left: 45px;
+    }

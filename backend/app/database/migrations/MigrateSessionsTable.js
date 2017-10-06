@@ -18,6 +18,7 @@ class MigrateSessionsTable
                 table.increments("id").primary().unsigned();
                 table.integer("user_id").unsigned();
                 table.integer("meta_id").unsigned();
+                table.boolean("is_valid").default(0);
                 table.timestamps();
             });
         })
